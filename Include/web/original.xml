@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="beep" xmlns:ns2="bop" xmlns:ns1="foo" xmlns:env="be">
+  <env:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsu:Timestamp wsu:Id="timestamp" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsu:Created>2021-09-15T19:23:13.688Z
+        </wsu:Created>
+        <wsu:Expires>2021-09-15T19:28:13.688Z
+        </wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </env:Header>
+  <env:Body>
+    <ns:PreAuthorizeResponse>
+      <ns:Receipt>
+        <ns1:DataKey>1234
+        </ns1:DataKey>
+        <ns1:CustomerId>12345
+        </ns1:CustomerId>
+        <ns1:PaymentId>123456
+        </ns1:PaymentId>
+        <ns1:TransactionResult>Approved
+        </ns1:TransactionResult>
+        <ns1:MaskedCreditCardNumber>123456788
+        </ns1:MaskedCreditCardNumber>
+        <ns1:ExpirationDate>3012
+        </ns1:ExpirationDate>
+        <ns1:CardDataSource>Ecommerce
+        </ns1:CardDataSource>
+        <ns1:AuthorizationCode>683295
+        </ns1:AuthorizationCode>
+        <ns1:TransactionTime>15:23:11
+        </ns1:TransactionTime>
+        <ns1:TransactionDate>2021-09-15
+        </ns1:TransactionDate>
+        <ns1:TransactionType>01
+        </ns1:TransactionType>
+        <ns1:TransactionAmount>24.00
+        </ns1:TransactionAmount>
+        <ns1:CreditCardType>M
+        </ns1:CreditCardType>
+        <ns1:TransactionId>47490-0_20
+        </ns1:TransactionId>
+        <ns1:CvdResultCode>M
+        </ns1:CvdResultCode>
+        <ns1:PaymentType>cc
+        </ns1:PaymentType>
+        <ns2:RiskInquiryResponse>
+          <ns2:TransactionId>D6TK02CBPQQQ
+          </ns2:TransactionId>
+          <ns2:Result>A
+          </ns2:Result>
+          <ns2:Score>34
+          </ns2:Score>
+        </ns2:RiskInquiryResponse>
+      </ns:Receipt>
+    </ns:PreAuthorizeResponse>
+  </env:Body>
+</env:Envelope>

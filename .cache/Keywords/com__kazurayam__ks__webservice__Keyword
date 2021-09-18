@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "BCB8DB44428A7C33D7CA4E6C14D843EC",
+  "keywordClasses": [
+    {
+      "name": "com.kazurayam.ks.webservice.Keyword",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

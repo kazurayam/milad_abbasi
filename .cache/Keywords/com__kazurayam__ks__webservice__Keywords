@@ -1,0 +1,185 @@
+{
+  "keywordFileContentHash": "1533C0FD08CA3A09CA1C74D9EA294BE7",
+  "keywordClasses": [
+    {
+      "name": "com.kazurayam.ks.webservice.Keywords",
+      "keywordMethods": [
+        {
+          "name": "verifySOAPBodyElementText",
+          "parameters": [
+            {
+              "name": "response",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.ResponseObject",
+                "unresolvedClassName": "ResponseObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "locator",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "expected",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "requireExactMatch",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "boolean",
+                "unresolvedClassName": "boolean",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "flowControl",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.model.FailureHandling",
+                "unresolvedClassName": "FailureHandling",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\n\t *\n\t * @param response an instance of com.kms.katalon.core.testobject.ResponseObject. \n\t * The response argument is expected to be a XML document. Otherwise an exception will be thrown.\n\t * The response argument is expected to be an SOAP Envelop document. Otherwise an exception will be thrown.\n\t * The SOAP Envelop document must contain an Body element. Otherwise an exception will be thrown.\n\t * \n\t * @param locator GPath locator. This keyword will fist select the SOPA Body element and then apply the locator expression to find the target element.\n\t * For example, when the response document is like this:\n\t * \u003ccode\u003e\n\t * \u0026lt;env:Envelope xmlns:env\u003d\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns\u003d\"bar\"\u003e\n\t *   \u0026lt;env:Header\u003e\n\t *     \u0026lt;foo\u003e0\u0026lt;/foo\u003e\n\t *   \u0026lt;/env:HEADER\n\t *   \u0026lt;env:Body\u003e\n\t *     \u0026lt;ns:PreAuthorizeResponse\u003e\n\t *       \u0026lt;ns:Receipt\u003e\n\t *         \u0026lt;ns1:DataKey\u003e1234\u0026lt;/ns1:DataKey\u003e\n\t *       \u0026lt;/ns:Receipt\u003e\n\t *     \u0026lt;/ns:PreAuthorizeResponse\u003e\n\t *   \u0026lt;/env:Body\u003e\n\t * \u0026lt;/env:Envelope\u003e\n\t * \u003c/code\u003e\n\t * and when we hant to verify if the `ns:DataKey` has the contet text `1234`, then the locator should be\n\t * \u003ccode\u003ePreAuthoriizeResponse.Recept.DataKey\u003ccode\u003e\n\t * The locator should start with the immediate child node of `env:Body` element.\n\t * You shouldn\u0027t include XML Namespace prefixes (\u0027ns\u0027) in the locator.\n\t * \n\t * @param expected the string content which you expect the target element to have. \n\t * \n\t * @param requireExactMatch optional, default to true.\n\t * If true, the XML content text and the expected string will be compared by the \u003d\u003d operator.\n\t * If false, the XML content text and the expected string will be compared loosely. The keyword will\n\t * trim() and normalize white spaces (0x20, CR, LF, TAB) in the XML content text. And the keyword \n\t * performs partial match. E.g, if the XML content text is \n\t * \u003ccode\u003e\n\t * \u0026lt;DataKey\u003e\n\t *   0 1234 56\n\t * \u0026lt;/Data\u003e \n\t * \u003c/DataKey\u003e\n\t * then the expected `1234` will match and return true, as the content text contains `1234` as its part.\n\t * \n\t * @param flowControl optional, default to the Failure Handling setting given in the settings.\n\t * \n\t * @author kazurayam\n\t */"
+        },
+        {
+          "name": "verifySOAPBodyElementText",
+          "parameters": [
+            {
+              "name": "response",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.ResponseObject",
+                "unresolvedClassName": "ResponseObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "locator",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "expected",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "requireExactMatch",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "boolean",
+                "unresolvedClassName": "boolean",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "verifySOAPBodyElementText",
+          "parameters": [
+            {
+              "name": "response",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.ResponseObject",
+                "unresolvedClassName": "ResponseObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "locator",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "expected",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
