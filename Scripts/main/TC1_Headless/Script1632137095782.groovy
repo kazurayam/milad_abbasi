@@ -8,6 +8,6 @@ ResponseObject response = WS.sendRequest((RequestObject)findTestObject('data_Hea
 
 println response.getResponseBodyContent()
 
-println response.getResponseText()
+//println response.getResponseText()
 
 WS.verifyElementText(response, 'PreAuthorizeResponse.Receipt.TransactionResult', 'Approved')
