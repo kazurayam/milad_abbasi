@@ -59,8 +59,8 @@ public class Keywords {
 	 * @author kazurayam
 	 */
 	@Keyword
-	static boolean verifySOAPBodyElementText(ResponseObject response, 
-			String locator, String expected, boolean requireExactMatch = true, 
+	static boolean verifySOAPBodyElementText(ResponseObject response,
+			String locator, String expected, boolean requireExactMatch = true,
 			FailureHandling flowControl = RunConfiguration.getDefaultFailureHandling()) {
 		Objects.requireNonNull(response)
 		Objects.requireNonNull(locator)
@@ -68,7 +68,7 @@ public class Keywords {
 		Objects.requireNonNull(flowControl)
 		if (response.isXmlContentType()) {
 			GPathResult root = new XmlSlurper().parseText(response.getResponseText())
-								.declareNamespace(env: "http://schemas.xmlsoap.org/soap/envelope/")
+					.declareNamespace(env: "http://schemas.xmlsoap.org/soap/envelope/")
 			if (root.name() == 'Envelope') {
 				GPathResult body = root.'env:Body'
 				if (body != null) {
@@ -80,20 +80,20 @@ public class Keywords {
 					if (requireExactMatch) {
 						boolean b = (nodeText == expected)
 						if (!b) {
-							stepFailed("the node at \"${locator}\" has a text \"${nodeText}\", " + 
-								"which is not equal to the expected string \"${expected}\"", flowControl)
+							stepFailed("the node at \"${locator}\" has a text \"${nodeText}\", " +
+									"which is not equal to the expected string \"${expected}\"", flowControl)
 						}
 						return b
 					} else {
 						boolean b = (nodeText.trim().replaceAll("\\s+", " ").contains(expected))
 						if (!b) {
-							stepFailed("the node at \"${locator}\" has a text \"${nodeText}\", " + 
-								"which does not contain the expected string \"${expected}\"", flowControl)
+							stepFailed("the node at \"${locator}\" has a text \"${nodeText}\", " +
+									"which does not contain the expected string \"${expected}\"", flowControl)
 						}
 						return b
 					}
 				} else {
-					stepFailed("response text is a SOAP Envelope but has not Body element", flowControl)	
+					stepFailed("response text is a SOAP Envelope but has not Body element", flowControl)
 				}
 			} else {
 				stepFailed("response text is not a SOAP Envelope", flowControl)
@@ -102,7 +102,7 @@ public class Keywords {
 			stepFailed("response text is not a XML", flowControl)
 		}
 	}
-	
+
 	static String getXmlNodeText(GPathResult source, String locator) {
 		GPathResult node = source
 		def paths = locator.split("\\.")
@@ -111,15 +111,19 @@ public class Keywords {
 		}
 		return node.text()
 	}
+
+	static String toXmlString() {
+		
+	}
 	
-	static String toXmlString(GPathResult gpr) {
+	static String toXmlString(Node node) {
 		StringWriter sw = new StringWriter()
 		IndentPrinter ip = new IndentPrinter(sw, "  ")
 		XmlNodePrinter xnp = new XmlNodePrinter(ip).setPreserveWhitespace(true)
-		xnp.print(gpr)
+		xnp.print(node)
 		return sw.toString()
 	}
-	
+
 	static def stepFailed(String message, FailureHandling flowControl) {
 		if (flowControl == FailureHandling.OPTIONAL) {
 			//println "#stepFailed('${message}',FailureHandling.OPTIONAL)"
